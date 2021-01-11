@@ -42,6 +42,8 @@ class RestaurantTest {
 
         assertFalse(result);
 
+        //failing test case
+
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
