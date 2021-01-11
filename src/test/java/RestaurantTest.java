@@ -48,6 +48,35 @@ class RestaurantTest {
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    @Test
+    public void item_added_to_menu_should_return_the_price_greater_than_zero() {
+        addRestaurantDetails();
+
+        restaurant.addToMenu("Sizzling brownie",319);
+
+        int price = restaurant.getSelectedItemPrice();
+
+
+//        System.out.println(price);
+
+        assertEquals(707, price);
+    }
+
+    @Test
+    public void item_not_added_to_menu_should_return_zero() {
+        LocalTime openingTime = LocalTime.parse("10:30:00");
+        LocalTime closingTime = LocalTime.parse("22:00:00");
+        restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+//        restaurant.addToMenu("Sweet corn soup",119);
+//        restaurant.addToMenu("Vegetable lasagne", 269);
+//        restaurant.addToMenu("Sizzling brownie",319);
+
+        int price = restaurant.getSelectedItemPrice();
+
+//        System.out.println(price);
+
+        assertEquals(0, price);
+    }
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
